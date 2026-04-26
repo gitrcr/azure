@@ -10,7 +10,7 @@ __Ubicación cuentas de servicio__: _Entra ID/App registrations (All application
 ### Script configuración automática
 Expone el bloque de código para terraform.tf
 
-https://github.com/gitrcr/azure/blob/main/bin/sp_account.sh
+https://github.com/gitrcr/azure/blob/main/bin/new-az-sp.sh
 ```bash
 wget https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
 chmod +x new-az-sp.sh
