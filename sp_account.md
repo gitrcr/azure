@@ -1,5 +1,5 @@
 # Azure: crear cuenta de servicio
-__Objetivo__: acceso, crear cuenta de servicio, datos de acceso para Terraform.
+__Objetivo__: acceso, crear cuenta de servicio, datos de acceso para Aplicaciones.
 
 __Ubicación cuentas de servicio__: _Entra ID/App registrations (All applications)_
 
@@ -8,6 +8,8 @@ __Ubicación cuentas de servicio__: _Entra ID/App registrations (All application
 * Abrir "Cloud Shell"
 
 ### Script configuración automática
+Expone el bloque de código para terraform.tf
+
 https://github.com/gitrcr/terraform/blob/main/scripts/new-az-sp.sh
 ```bash
 wget https://raw.githubusercontent.com/gitrcr/terraform/refs/heads/main/scripts/new-az-sp.sh
@@ -16,7 +18,7 @@ chmod +x new-az-sp.sh
 ```
 
 ### Procedimiento manual
-Extracción de datos y creación del usuario del servicio. Requiere configurar terraform.tf
+Extracción de datos y creación del usuario del servicio.
 
 ```bash
 az account show
