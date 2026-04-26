@@ -1,5 +1,5 @@
 #!/bin/bash
-# 0. Ejecución directa: copia el contenido del comentario DIRECT para ejecutar el script, el fichero se borra al finalizar (comentar para revisión).
+# 0. Ejecuta en  Cloud Shell el contenido del comentario DIRECT.
 
 <<DIRECT
 https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
