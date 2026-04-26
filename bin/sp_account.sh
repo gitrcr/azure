@@ -2,7 +2,7 @@
 # 0. Ejecución directa: copia el contenido del comentario DIRECT para ejecutar el script, el fichero se borra al finalizar (comentar para revisión).
 
 <<DIRECT
-wget https://raw.githubusercontent.com/gitrcr/terraform/refs/heads/main/scripts/new-az-sp.sh
+wget https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/sp_account.sh
 chmod +x new-az-sp.sh
 ./new-az-sp.sh
 DIRECT
