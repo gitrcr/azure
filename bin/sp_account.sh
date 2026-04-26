@@ -1,0 +1,57 @@
+#!/bin/bash
+# 0. Ejecución directa: copia el contenido del comentario DIRECT para ejecutar el script, el fichero se borra al finalizar (comentar para revisión).
+
+<<DIRECT
+wget https://raw.githubusercontent.com/gitrcr/terraform/refs/heads/main/scripts/new-az-sp.sh
+chmod +x new-az-sp.sh
+./new-az-sp.sh
+DIRECT
+
+# 1. Inicio de sesión en Azure (opcional si ya estás logueado)
+# az login
+
+# 2. Establecer la suscripción activa (opcional si ya está seleccionada)
+# az account set --subscription "your-subscription-id"
+
+# 3. Obtener el ID de la suscripción y asignarlo a una variable
+subscriptionId=$(az account show --query id --output tsv)
+
+# 4. Crear un Service Principal y extraer sus credenciales
+read -p "Enter the name of the Principal Service (example terra3-sp): " service_principal_name
+echo "Creating Service Principal..."
+sp_output=$(az ad sp create-for-rbac --name "$service_principal_name" --role="Contributor" --scopes="/subscriptions/$subscriptionId" --output json)
+
+# 5. Extraer valores del JSON
+client_id=$(echo $sp_output | jq -r '.appId')
+client_secret=$(echo $sp_output | jq -r '.password')
+tenant_id=$(echo $sp_output | jq -r '.tenant')
+
+# 6. Resultado y bloque para copiar en terraform.tf
+echo "Service Principal created: $service_principal_name"
+echo "### Insert the rows betwen ---- in the file terraform.tf ###"
+
+echo "----"
+echo "  subscription_id = \"$subscriptionId\""
+echo "  tenant_id       = \"$tenant_id\""
+echo "  client_id       = \"$client_id\""
+echo "  client_secret   = \"$client_secret\""
+echo "----"  
+echo ""
+
+# 7. Addons info
+echo "##Management App accounts: Entra ID/App registrations (All applications)"
+echo "az ad app list --query "[].{displayName: displayName, appId: appId}" --output table"
+echo ""
+az ad app list --query "[].{displayName: displayName, appId: appId}" --output table
+echo ""
+echo "#Secret change, add DisplayName to the end of the command" 
+echo az ad sp credential reset --name "
+echo ""
+echo "#Delete SP account, add AppId to the end of the command"
+echo  "az ad sp delete --id "
+
+
+# 8. Borrado del fichero (opcional)
+rm "$0"
+echo ""
+echo "Fin del script, fichero borrado"
