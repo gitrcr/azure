@@ -12,7 +12,7 @@ Expone el bloque de código para terraform.tf
 
 https://github.com/gitrcr/azure/blob/main/bin/sp_account.sh
 ```bash
-wget https://raw.githubusercontent.com/gitrcr/terraform/refs/heads/main/scripts/new-az-sp.sh
+wget https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/sp_account.sh
 chmod +x new-az-sp.sh
 ./new-az-sp.sh
 ```
