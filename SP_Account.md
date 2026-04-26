@@ -7,14 +7,12 @@ __Ubicación cuentas de servicio__: _Entra ID/App registrations (All application
 * Acceder a cuenta de Azure
 * Abrir "Cloud Shell"
 
-### Script configuración automática
-Expone el bloque de código para terraform.tf
+## Script configuración automática
+Crear la cuenta SP y expone el bloque de código para terraform.tf
 
 https://github.com/gitrcr/azure/blob/main/bin/new-az-sp.sh
 ```bash
-wget https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
-chmod +x new-az-sp.sh
-./new-az-sp.sh
+https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
 ```
 
 ### Procedimiento manual
