@@ -12,7 +12,8 @@ Crear la cuenta SP y expone el bloque de código para terraform.tf
 
 https://github.com/gitrcr/azure/blob/main/bin/new-az-sp.sh
 ```bash
-https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
+# Ejecutar en el bash de Cloud Shell
+bash <(wget -qO - https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh)
 ```
 
 ### Procedimiento manual
