@@ -45,7 +45,7 @@ echo ""
 az ad app list --query "[].{displayName: displayName, appId: appId}" --output table
 echo ""
 echo "#Secret change, add DisplayName to the end of the command" 
-echo az ad sp credential reset --name "
+echo "az ad sp credential reset --name "
 echo ""
 echo "#Delete SP account, add AppId to the end of the command"
 echo  "az ad sp delete --id "
