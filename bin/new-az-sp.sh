@@ -2,9 +2,7 @@
 # 0. Ejecución directa: copia el contenido del comentario DIRECT para ejecutar el script, el fichero se borra al finalizar (comentar para revisión).
 
 <<DIRECT
-wget https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
-chmod +x new-az-sp.sh
-./new-az-sp.sh
+https://raw.githubusercontent.com/gitrcr/azure/refs/heads/main/bin/new-az-sp.sh
 DIRECT
 
 # 1. Inicio de sesión en Azure (opcional si ya estás logueado)
@@ -49,9 +47,5 @@ echo "az ad sp credential reset --name "
 echo ""
 echo "#Delete SP account, add AppId to the end of the command"
 echo  "az ad sp delete --id "
-
-
-# 8. Borrado del fichero (opcional)
-rm "$0"
 echo ""
-echo "Fin del script, fichero borrado"
+echo "Fin del script"
